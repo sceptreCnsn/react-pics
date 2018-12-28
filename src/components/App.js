@@ -3,15 +3,17 @@ import ImageList from "./ImageList";
 import SearchBar from "./SearchBar";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "Hello" };
+  state = { message: "Hello", keyword:'' };
+
+  onChange = (term) => {
+    this.setState({keyword:term});
   }
 
   render() {
     return (
-      <div>
-        <SearchBar />
+      <div className="ui container">
+        {this.state.keyword}
+        <SearchBar onChange={this.onChange}/>
         <ImageList />
       </div>
     );
