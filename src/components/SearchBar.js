@@ -1,13 +1,15 @@
 import React from "react";
 
 class SearchBar extends React.Component {
+  state = { term: "" };
   onInputChange = e => {
     this.props.onChange(e.target.value);
+    this.setState({term:e.target.value});
   };
 
   onFormSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(e.target.value);
+    this.props.onSubmit(this.state.term);
   };
 
   render() {
@@ -16,7 +18,11 @@ class SearchBar extends React.Component {
         <form className="ui form" onSubmit={this.onFormSubmit}>
           <label className="ui big">Search Photos</label>
           <div className="field">
-            <input type="text" onChange={this.onInputChange} />
+            <input
+              type="text"
+              value={this.state.term}
+              onChange={this.onInputChange}
+            />
           </div>
         </form>
       </div>
