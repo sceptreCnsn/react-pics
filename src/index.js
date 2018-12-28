@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './components/App'
-//asdasdasdasdasdasdasdasdasd cansin
+//asdasdasdasdasdasdasdasdasd cansin asdasd
 ReactDOM.render(<App />, document.querySelector("#root"));
